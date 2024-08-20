@@ -1,0 +1,4 @@
+./.env
+./secrets
+./db/pg_hba.conf
+./db/postgresql.conf

@@ -1,0 +1,18 @@
+#!/bin/bash
+
+# stop containers and remove volumes
+docker compose down -v
+
+# iter container names starting with "boc-"
+while true; do
+  container_id=$("$(pwd)"/dev/utils/next_container_id "boc-")
+  if [[ -n "${container_id}" ]]; then
+    # remove if container ID is not empty (i.e. container exists)
+    echo "removing container ${container_id}"
+    docker container rm -f "${container_id}"
+  else
+    # exit if no more matching containers found
+    echo "dev/purge - All containers removed"
+    break
+  fi
+done

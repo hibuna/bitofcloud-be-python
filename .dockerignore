@@ -1,0 +1,7 @@
+**/Dockerfile
+.env.example
+.gitignore
+.git
+dev
+README.md
+db/init

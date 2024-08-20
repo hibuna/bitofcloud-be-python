@@ -1,0 +1,6 @@
+#!/bin/bash
+
+# this script finds the next Docker container ID
+# of which the ls result includes a specific string
+
+docker container ls | grep "$1" | cut -d " " -f1
